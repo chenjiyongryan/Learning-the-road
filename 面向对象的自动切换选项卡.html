@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>、面向对象的选项卡</title>
+    <style>
+        #div1 div,#div2 div {
+            width: 200px;
+            height: 200px;
+            border: 1px #000 solid;
+            display: none;
+        }
+        .active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1">
+    <input class="active" type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <div style="display:block">11111</div>
+    <div>22222</div>
+    <div>33333</div>
+</div>
+
+<div id="div2">
+    <input class="active" type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <div style="display:block">11111</div>
+    <div>22222</div>
+    <div>33333</div>
+</div>
+<script>
+    window.onload = function () {
+
+        var t1 = new Tab('div1');
+        t1.init();
+        t1.autoPlay();
+        var t2 = new Tab('div2');
+        t2.init();
+        t2.autoPlay();
+    };
+    function Tab(id) {
+        this.parentDiv = document.getElementById(id);
+        this.oDivs = this.parentDiv.getElementsByTagName('div');
+        this.oInput = this.parentDiv.getElementsByTagName('input');
+    }
+
+    Tab.prototype.init = function (){
+        var This = this;
+        for (var i = 0; i < this.oInput.length; i++) {
+            this.oInput[i].index = i;
+            this.oInput[i].onclick = function () {
+
+                This.change(this)
+            };
+        }
+    };
+
+    Tab.prototype.change = function (obj) {
+        console.log(obj);
+        for (var i = 0; i < this.oInput.length; i++) {
+            this.oInput[i].className = '';
+            obj.className = 'active';
+            this.oDivs[i].style.display = 'none';
+            this.oDivs[obj.index].style.display = 'block';
+        }
+
+    };
+
+    Tab.prototype.autoPlay = function () {
+        var This = this
+        var num = 0;
+        setInterval(function () {
+            if (num>=3){
+                num = 0
+            }
+            for(var i =0;i<This.oInput.length;i++){
+                This.oInput[i].className = '';
+                This.oDivs[i].style.display = 'none';
+            }
+            This.oInput[num].className = 'active';
+            This.oDivs[num].style.display = 'block';
+            num++;
+        },1000)
+    };
+
+</script>
+</body>
+</html>

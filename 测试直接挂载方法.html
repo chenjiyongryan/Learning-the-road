@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>直接挂载方法</title>
+</head>
+<body>
+<script>
+    var test = new Fn1();
+
+    function Fn1(name,age) {
+    }
+    test.hobbies = function () {
+        alert('\'music\',\'readbook\',\'LOL\'')
+    };
+    test.hobbies()
+
+
+//    var obj = {name:'ryan',age:'26'};
+    var json = {"name":"ryan","age":"26"};
+//    var whatobj = {'name':"ryan",'age':"26"};
+    var arr = [];
+    var fn = function () {
+        
+    };
+
+    var str = '';
+
+    console.log(Object.prototype.toString.call(obj));
+    console.log(Object.prototype.toString.call(json));
+    console.log(Object.prototype.toString.call(whatobj));
+    console.log(Object.prototype.toString.call(arr));
+    console.log(Object.prototype.toString.call(fn));
+    console.log(Object.prototype.toString.call(str));
+
+</script>s
+</body>
+</html>

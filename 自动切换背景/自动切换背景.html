@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="换" id="startBtn">
+<input type="button" value="停" id="stopBtn">
+<script>
+    window.onload = function () {
+        var stratBtn = document.getElementById('startBtn');
+        var stopBtn = document.getElementById('stopBtn');
+        var arrUrl = [ '1.jpg', '2.jpg', '3.jpg', '4.jpg' ];
+        var num = 0;
+        var timer = null;
+
+        stratBtn.onclick = function () {
+            clearInterval(timer)
+            timer = setInterval(function autoPlay() {
+                document.body.style.background = 'url('+(arrUrl[num])+')'
+                num++
+                num=num%arrUrl.length
+            },1000);
+        };
+        stopBtn.onclick = clearInterval(timer)
+    }
+</script>
+</body>
+</html>

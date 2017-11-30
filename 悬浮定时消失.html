@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>悬浮定时消失</title>
+    <style>
+        ul,li{
+            display: inline-block;
+        }
+
+        ul{
+            width: 500px;
+            height: 30px;
+            background-color: cadetblue;
+            padding: 0;
+            margin: 100px 200px;
+        }
+        li{
+            width: 120px;
+            position: relative;
+            height: 25px;
+        }
+        div{
+            position: absolute;
+            left:-20px;
+            top: 30px;
+            display: none;
+        }
+        a{
+            width: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+<ul id="box">
+    <li>首页<div id="div1"><a href="">111</a><a href="">222</a><a href="">333</a><a href="">444</a></div></li>
+    <li>关于我们<div id="div2"><a href="">111</a><a href="">222</a><a href="">333</a><a href="">444</a></div></li>
+    <li>作品<div id="div3"><a href="">111</a><a href="">222</a><a href="">333</a><a href="">444</a></div></li>
+    <li>博客<div id="div4"><a href="">111</a><a href="">222</a><a href="">333</a><a href="">444</a></div></li>
+</ul>
+<script>
+    window.onload = function () {
+        var oLis = document.getElementsByTagName('li');
+
+        for (var i=0;i<oLis.length;i++){
+            oLis[i].onmouseover = function () {
+                this.children[0].style.display = 'inline-block'
+            }
+
+            oLis[i].onmouseout = function () {
+                var _this = this
+                setTimeout(function () {
+                    _this.children[0].style.display = 'none'
+                },1500)
+            }
+        }
+    }
+</script>
+</body>
+</html>

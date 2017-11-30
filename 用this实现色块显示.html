@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用this实现色块显示</title>
+    <style>
+        div{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: ghostwhite;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .show{
+            display: inline-block;
+            width: 95px;
+            height: 200px;
+            background-color: #00CC99;
+            position: absolute;
+            top:100px;
+            left:2px;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+<div><span class="hide"></span></div>
+<div><span class="hide"></span></div>
+<div><span class="hide"></span></div>
+
+<script>
+    window.onload = function () {
+        var div = document.getElementsByTagName('div');
+        var span = document.getElementsByTagName('span');
+
+        for (var i =0;i<div.length;i++){
+        div[i].onmouseover = function () {
+            this.children[0].className = 'show'
+        }
+            div[i].onmouseout = function () {
+                this.children[0].className = 'hide'
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

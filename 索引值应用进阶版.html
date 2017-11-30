@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>索引值应用</title>
+</head>
+<body>
+<input type="button" id="btn1" value="btn">
+<input type="button" id="btn2" value="btn">
+<input type="button" id="btn3" value="btn">
+<p>1</p>
+<p>2</p>
+<p>3</p>
+
+
+<script>
+    window.onload = function () {
+        var btn = document.getElementsByTagName('input')
+        var oP = document.getElementsByTagName('p')
+        var arr = [ '莫涛', '张森', '杜鹏' ];
+
+        for(var i=0;i<btn.length;i++){
+            oP[i].index = i;
+            btn[i].index = i;
+            btn[i].onclick = function () {
+                this.value = arr[this.index]
+                oP[this.index].innerHTML = arr[this.index]
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

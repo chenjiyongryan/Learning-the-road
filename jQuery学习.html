@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p { color:blue; margin:10px;padding: 10px;border: 1px solid blue;width: 500px;background-color: black }
+        b { color:red; }
+    </style>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+<p id="p1" class="pTag"><b>Test</b> Paragraph.</p>
+<p><i>111</i></p>
+<script>
+    $(function () {
+       alert( $('p').text('<i>This is a test.</i>')) ; //获取p集合里面的的所有文本节点.
+
+        alert( $('p').html());//获取第一个p里面的innerHTML
+
+            console.log($('p').attr('class'));
+            console.log($('p').removeAttr('id'));
+        console.log($('p').outerWidth(true));
+        $('p').remove();
+    })
+</script>
+
+</body>
+</html>

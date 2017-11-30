@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 279px;
+            height: 404px;
+            background-color: rgba(198, 247, 217, 0.98);
+            margin: 100px auto;
+        }
+        li{
+            /*list-style: none;*/
+            height: 30px;
+        }
+        img{
+            display:  none;
+        }
+    </style>
+</head>
+<body>
+<div id="divBox">
+    <h3>每日排行榜</h3>
+<ol  id="ulBox">
+    <li><img src="newsimg.png" alt=""></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+
+</ol>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        var oL = document.getElementById('ulBox');
+        var oLi = oL.getElementsByTagName('li');
+
+        var textArr = ['十一大开了啊啊啊啊啊',
+            '十二大开了啊啊啊啊啊',
+            '真的吗啊啊啊啊啊啊啊',
+            '十三大开了啊啊啊啊啊',
+            '十四大开了啊啊啊啊啊',
+            '十五大开了啊啊啊啊啊',
+            '十六大开了啊啊啊啊啊',
+            '十七大开了啊啊啊啊啊',
+            '十八大开了啊啊啊啊啊',
+            '十九大开了啊啊啊啊啊']
+
+        var imgArr = ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png']
+
+        for(var i=0;i<oLi.length;i++){
+
+            oLi[i].innerHTML = textArr[i]+'<img src="' + imgArr[i]+'"'>'
+            oLi[i].onmouseover = function () {
+                this.style.height = '80px'
+                this.firstElementChild.style.display = 'inline'
+            }
+
+            oLi[i].onmouseout = function () {
+                this.style.height = '30px'
+                this.firstElementChild.style.display = 'none'
+            }
+        }
+
+
+
+    }
+</script>
+</html>

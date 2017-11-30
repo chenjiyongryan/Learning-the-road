@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this进阶</title>
+</head>
+<body>
+<input type="button">
+<input type="button">
+<input type="button">
+<input type="button">
+
+<script>
+window.onload = function () {
+    var btn = document.getElementsByTagName('input');
+    var arr = ['A', 'B', 'C', 'D'];
+    var num = 0;
+    init()
+
+    function init() {
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].value = arr[0]
+        }
+
+
+
+    }
+
+    for (var i = 0; i < btn.length; i++) {
+        btn[i].onclick = function () {
+            if(num==3){
+                num=0
+                this.value = arr[num]
+            }else {
+                num++
+                this.value = arr[num]
+            }
+
+
+
+
+
+        }
+    }
+}
+</script>
+</body>
+</html>

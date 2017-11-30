@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反选</title>
+</head>
+<body>
+<input type="button" value="全选">
+<input type="button" value="反选"><br><br>
+<label for="input1">试一试<input type="checkbox" id="input1"></label><br><br>
+<label for="input2">试一试<input type="checkbox" id="input2"></label><br><br>
+<label for="input3">试一试<input type="checkbox" id="input3"></label><br><br>
+<label for="input4">试一试<input type="checkbox" id="input4"></label><br><br>
+<label for="input5">试一试<input type="checkbox" id="input5"></label><br><br>
+
+
+
+<script>
+    window.onload = function () {
+        var oBtn = document.getElementsByTagName('input');
+
+        oBtn[1].onclick = function () {
+            for (var i=2;i<oBtn.length;i++){
+                oBtn[i].checked = !oBtn[i].checked;
+            }
+        }
+
+        oBtn[0].onclick = function () {
+            for (var i=2;i<oBtn.length;i++){
+                oBtn[i].checked = true;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

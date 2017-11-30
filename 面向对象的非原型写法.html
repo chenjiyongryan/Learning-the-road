@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload  = function () {
+        var obj = new Testfn();
+        
+        function Testfn() {
+            console.log(this);
+            this.name = 'ryan';
+            this.age = '26';
+            this.oprent = function () {
+                alert('这是oprent方法')
+            };
+            this.oprchi = function () {
+                alert('这是oprchi方法')
+            };
+        }
+    }
+</script>
+</body>
+</html>

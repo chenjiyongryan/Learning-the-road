@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操作行间样式</title>
+    <style>
+        #textarea{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<textarea name="" id="textarea" cols="30" rows="10"></textarea><br>
+<input type="button" id="input" value="   还原   ">
+
+<script>
+
+    window.onload = function () {
+        var textarea = document.getElementById('textarea');
+        var button = document.getElementById('input');
+
+        textarea.onclick = function () {
+            this.style.cssText = 'width: 400px;height: 400px;'
+        }
+
+        button.onclick = function () {
+
+            textarea.style.cssText = ''
+        }
+    }
+</script>
+</body>
+</html>

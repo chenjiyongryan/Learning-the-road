@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作练习</title>
+</head>
+<body>
+<div id="div1" class="div1"></div>
+<script>
+    window.onload = function () {
+        var div = document.getElementById('div1');
+
+        //得到对象的所有行间属性+属性值集合
+        console.log(div.attributes[1].value)
+
+        console.log(div.getAttribute('class'))
+        div.setAttribute('class','div3')
+        div.removeAttribute('class')
+    }
+</script>
+</body>
+</html>

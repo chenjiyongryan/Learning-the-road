@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息对话框</title>
+    <style>
+        div{
+            width: 221px;
+            height: 200px;
+            background-color: darkgrey;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+</div>
+<input type="text" id="input">
+<input type="button" id="btn" value="send">
+
+<script>
+    window.onload = function () {
+
+        //全局变量
+        var oDiv = document.getElementById('div1');
+        var oText = document.getElementById('input');
+        var oBtn = document.getElementById('btn');
+
+        init()
+
+        //初始化
+        function init () {
+            oText.focus()
+        }
+
+        oBtn.onclick = function () {
+            if(oText.value!=''){
+            oDiv.innerHTML  += '<span>'+ oText.value + '</span>'+'</br>'
+                oText.value = '';
+                oText.focus()
+            } else {
+                alert('请输入内容')
+            }
+        }
+    }
+</script>
+</body>
+</html>

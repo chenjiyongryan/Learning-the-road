@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background: #ffa37c;
+            position: absolute;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background: #2a5aff;
+            position: absolute;
+            left: 100px;
+        }
+
+        #div3 {
+            width: 100px;
+            height: 100px;
+            background: #31ffa5;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            Drag().init({id:'div1'});
+            Drag().init({id:'div2'});
+            Drag().init({id:'div3'});
+
+            console.log(Drag())
+        };
+
+        function Drag() {
+            var obj = {};
+            console.log(this);
+            obj.disX = 0;
+            obj.disY = 0;
+            obj.setings = {
+                fn1:function () {},fn2:function () {}
+            };
+            obj.init = function (opt) {
+                this.oDiv = document.getElementById(opt.id);
+
+                console.log(this);
+                console.log(this.setings);
+                extend(this.setings,opt);
+                console.log(this.setings);
+
+                var This = this;
+                this.oDiv.onmousedown = function (ev) {
+                    var ev = ev || window.event;
+                    This.fnDown(ev);
+                    document.onmousemove = function (ev) {
+                        var ev = ev || window.event;
+                        This.fnMove(ev);
+
+                    };
+                    document.onmouseup = This.fnUp;
+                    return false;
+                }
+            };
+            /*按下*/
+            obj.fnDown = function (ev) {
+                this.disX = ev.clientX - this.oDiv.offsetLeft;
+                this.disY = ev.clientY - this.oDiv.offsetTop;
+            };
+            /*移动*/
+            obj.fnMove = function (ev) {
+                this.oDiv.style.left = ev.clientX - this.disX + 'px';
+                this.oDiv.style.top = ev.clientY - this.disY + 'px';
+            };
+            /*抬起*/
+            obj.fnUp = function () {
+                this.onmousemove = null;
+                this.onmouseup = null;
+            };
+
+            return obj;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        //改写子类下的fnMove方法
+
+        function extend(obj1,obj2){
+            for(var attr in obj2){
+                obj1[attr] = obj2[attr];
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div id="div1">1</div>
+<div id="div2">2</div>
+<div id="div3">3</div>
+</body>
+</html>
