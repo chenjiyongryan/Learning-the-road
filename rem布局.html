@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    
+    <title>rem布局</title>
+
+    <script>
+        (function () {
+            window.onload = function () {
+                var html  = document.documentElement;
+                var screenW = window.screen.width;
+                html.style.fontSize = screenW/16 + 'px';
+                console.log(html)
+
+            }
+        })()
+    </script>
+    <style>
+        body{
+            margin: 0;
+        }
+        .div{
+            width: 4rem;
+            height: 2rem;
+            border: 1px solid royalblue;
+            float: left;
+            box-sizing: border-box;
+        }
+        
+        
+    </style>
+
+
+</head>
+<body>
+<div class="div" id="div1">1</div>
+<div class="div" id="div2">1</div>
+<div class="div" id="div3">1</div>
+<div class="div" id="div4">1</div>
+</body>
+</html>
