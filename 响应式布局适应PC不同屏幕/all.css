@@ -1,0 +1,12 @@
+body{
+    /*margin: 0;*/
+}
+
+div{
+    width: 20%;
+    height: 200px;
+    background-color: #26ffd0;
+    border: 1px solid #5628ff;
+    float: left;
+    box-sizing: border-box;
+}
