@@ -1,0 +1,80 @@
+a {
+  text-decoration: none;
+}
+#header {
+  width: 15rem;
+  height: 2.06rem;
+  background-color: #ef3239;
+  color: #ffffff;
+}
+#header {
+  color: #ffffff;
+  display: -webkit-box;
+  -webkit-box-pack: Justify;
+}
+#header div {
+  width: 2.56rem;
+  height: 1.76rem;
+  line-height: 2.6rem;
+  padding-left: 0.76rem;
+  padding-right: 0.76rem;
+}
+#header a {
+  color: #ffffff;
+}
+#header #task a {
+  font-size: 0.74rem;
+}
+#header #lock a {
+  font-size: 0.52rem;
+}
+#header #lock a span {
+  font-size: 0.78rem;
+}
+#header #refresh a {
+  font-size: 0.72rem;
+}
+#nav {
+  width: 15rem;
+  height: 2.1rem;
+  background-color: #fdfdfd;
+  border-top: 1px solid #b0b0b0;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.7rem;
+  display: -webkit-box;
+  -webkit-box-pack: Justify;
+}
+#nav a {
+  display: block;
+  color: #848689;
+  line-height: 2.1rem;
+  padding-left: 0.84rem;
+  padding-right: 0.84rem;
+}
+span[class*="chevron-up"] {
+  position: relative;
+  top: -0.16rem;
+}
+span[class*="chevron-down"] {
+  position: relative;
+  left: -0.88rem;
+  top: 0.36rem;
+}
+#section ul {
+  padding: 0;
+  list-style: none;
+}
+#section ul li {
+  border-bottom: 1px solid #848689;
+}
+#section li a {
+  color: #848689;
+}
+#section li a img {
+  width: 4.68rem;
+  height: 4.68rem;
+}
+#section .sPrice {
+  font-size: 0.76rem;
+  color: red;
+}

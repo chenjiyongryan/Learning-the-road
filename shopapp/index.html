@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+     <title>商城h5</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript">
+    	
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   		});
+   		
+   		(
+   			window.onload = function(){
+   				var html = document.documentElement;
+   				var htmlW = html.getBoundingClientRect().width;
+   				html.style.fontSize = htmlW/15 + 'px';
+   				
+   			}
+   		)()
+    </script>
+</head>
+<body>
+	<!--头部结构-->
+	<header id="header">
+		<div id="task"><a href="" class="glyphicon glyphicon-tasks"></a></div>
+		<div id="lock"><a href="" class="glyphicon glyphicon-lock"></a></div>
+		<div id="refresh"><a href="" class="glyphicon glyphicon-repeat"></a></div>
+	</header>
+	<!--导航栏结构-->
+	<nav id="nav">
+		
+			<a class="active" href="javascript:;">综合<span class="glyphicon glyphicon-chevron-down" style="position: 	inherit; "></span></a>
+			<a href="javascript:;">销量</a>
+			<a href="javascript:;">价格
+				<span id="spanBox">
+					<span class="glyphicon glyphicon-chevron-up"></span>
+					<span class="active glyphicon glyphicon-chevron-down"></span>
+				</span>
+			</a>
+			<a href="javascript:;">筛选<span class="glyphicon glyphicon-filter"></span></a>
+		</nav>
+		
+		<section id="section">
+		<ul id="list">
+			<li>
+					<a href="javascript:;">
+						<img src="img/imgphone.png"/>
+						<span class="spanWrap">
+							
+							<span class="sPrice">￥4888.00</span>
+							<span class="sComment">好评96% 59091人</span>
+						</span>
+					</a>
+				</li>
+		</ul>
+		</section>
+</body>
+</html>
